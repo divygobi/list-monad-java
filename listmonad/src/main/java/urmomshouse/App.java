@@ -15,7 +15,14 @@ public class App {
     }
 
     public static void getEvens(List<Integer> list) {
-        ListMonad<Integer> listMonad = new ListMonad<>(list, x -> x.filter(y -> y % 2 == 0));
+        ListMonad<Integer> listMonad = new ListMonad<>(list, x -> {
+            List<Integer> newList = new ArrayList<>();
+            for (int i: x){
+                if (i % 2 == 0){
+                    newList.add(i);}
+            }
+            return x;
+        });
         listMonad.printList();
     }
 }

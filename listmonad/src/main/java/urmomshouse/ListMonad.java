@@ -1,8 +1,8 @@
-package main.java.urmomshouse;
+package urmomshouse;
 import java.util.List;
 import java.util.function.Function;
 
-public class ListMonad{
+public class ListMonad<T>{
     List<T> list;
     Function<List<T>, List<T>> f;
 
